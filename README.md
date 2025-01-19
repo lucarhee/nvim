@@ -1,9 +1,8 @@
-# 💤 LazyVim
+# My setting with 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+[LazyVim](https://github.com/LazyVim/LazyVim)을 가지고 조금씩 바꾸고 있음.
 
-## lazyvim 알아보기
+## 바뀐 내용
 
-- fzf-lua
-- blink.cmp
+- dot 키맵 실행 추가
+- vimwiki 설치
