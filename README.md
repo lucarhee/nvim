@@ -1,8 +1,9 @@
-# My setting with 💤 LazyVim
+**This repo is supposed to used as config by NvChad users!**
 
-[LazyVim](https://github.com/LazyVim/LazyVim)을 가지고 조금씩 바꾸고 있음.
+- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
+- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
+- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
 
-## 바뀐 내용
+# Credits
 
-- dot 키맵 실행 추가
-- vimwiki 설치
+1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
