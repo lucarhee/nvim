@@ -1,9 +1,133 @@
-**This repo is supposed to used as config by NvChad users!**
+# 💤 LazyVim 기반 설정
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+## lazyvim 기능
+- 강력한 사용자 환경에서 플러그인을 관리한다. (Manage all your Neovim plugins with a powerful ui)
+- Lua 모듈의 자동 캐싱 및 바이트 코드 컴파일 덕분에 빠른 시작 시간
+- 얕은 클론 대신 부분 클론
+- Lua 모듈의 자동 lazy-loading 및 이벤트, 명령, 파일 형식 및 키 매핑에 대한 게으른 로딩
+- Neovim을 시작하기 전에 누락 된 플러그인을 자동으로 설치하여 즉시 사용할 수 있습니다.
+- 향상된 성능을 위한 Async 실행
+- 플러그인을 수동으로 컴파일 할 필요가 없습니다.
+- 종속성을 바르게 순차적으로 갖춘다. (Correct sequencing of dependencies)
+- 여러 파일로 설정을 구성할 수 있다.
+- vimdocs이 없는 플러그인에 대한 README.md 파일에서 제목에 헬프 태그를 생성합니다.
+- 로컬 플러그인 사용에 대한 Dev 옵션 및 패턴
+- 성능을 최적화하기 위한 프로파일링 도구
+- 설치된 플러그인을 추적하는 Lockfile; lazy-lock.json
+- 업데이트 자동 확인
+- 커밋, 브랜치, 태그, 버전 및 전체 Semver 지원
+- 보류 중인 업데이트 수를 보여주는 Statusline 구성 요소
+- 자동으로 lazy-loads colorschemes
 
-# Credits
+## 플러그인 목록과 개선 사항
+- bufferline.nvim
+- flash.nvim
+- lazy.nvim
+- LazyVim
+- lualine.nvim
+- mason-lspconfig.nvim
+- mini.ai
+- mini.pairs
+- noice.nvim
+- nui.nvim
+- nvim-treesitter
+- nvim-treesitter-textobjects
+- snacks.nvim
+- tokyonight.nvim
+- trouble.nvim
+- ts-comments.nvim
+- vimwiki
+  - vimwiki에서 마크다운 형식으로 쓴 한글이 맞춤법 검사하지 않게 하기.
+  - 마크다운에서 실행할 수 있는 한글 맞춤법 검사기.
+- which-key.nvim
+- blink.cmp
+- catppuccin 
+- conform.nvim
+- friendly-snippets
+- gitsigns.nvim
+- grug-far.nvim
+- lazydev.nvim
+- mason.nvim
+- mini.icons 
+- nvim-lint
+- nvim-lspconfig
+- nvim-ts-autotag
+- persistence.nvim
+- plenary.nvim
+- todo-comments.nvim
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+### 기타 플러그인 목록
+- ai.codeium
+- ai.copilot
+- ai.copilot-chat
+- ai.supermaven
+- ai.tabnine
+- coding.blink
+- coding.luasnip
+- coding.mini-comment
+- coding.mini-snippets
+- coding.mini-surround
+- coding.neogen
+- coding.nvim-cmp
+- coding.yanky
+- dap.core
+- dap.nlua
+- editor.aerial
+- editor.dial
+- editor.fzf
+- editor.harpoon2
+- editor.illuminate
+- editor.inc-rename
+- editor.leap
+- editor.mini-diff
+- editor.mini-files
+- editor.mini-move
+- editor.navic
+- editor.neo-tree
+- editor.outline
+- editor.overseer
+- editor.refactoring
+- editor.snacks_explorer
+- editor.snacks_picker
+- editor.telescope
+- formatting.biome
+- formatting.black
+- formatting.prettier
+- linting.eslint
+- lsp.neoconf
+- lsp.none-ls
+- test.core
+- ui.alpha
+- ui.dashboard-nvim
+- ui.edgy
+- ui.indent-blankline
+- ui.mini-animate
+- ui.mini-indentscope
+- ui.mini-starter
+- ui.smear-cursor
+- ui.treesitter-context
+- util.chezmoi
+- util.dot
+- util.gitui
+- util.mini-hipatterns
+- util.octo
+- util.project
+- util.rest
+- util.startuptime
+- vscode
+- lang.clangd
+- lang.cmake
+- lang.git
+- lang.go
+- lang.haskell
+- lang.java
+- lang.json
+- lang.kotlin
+- lang.markdown
+- lang.python
+- lang.rust
+- lang.scala
+- lang.sql
+- lang.tailwind
+- lang.toml
+- lang.typescript
