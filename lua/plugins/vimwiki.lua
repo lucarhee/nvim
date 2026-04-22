@@ -5,8 +5,8 @@ return {
     init = function()
       vim.g.vimwiki_list = {
         {
-          path = "~/Documents/Luca_Rhee/",
-          diary_rel_path = "2_area/diary/",
+          path = "~/Workspaces/notes/",
+          diary_rel_path = "diary/",
           syntax = "markdown",
           ext = ".md",
           auto_spell = 0,
