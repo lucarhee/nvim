@@ -6,3 +6,11 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Turn off the vimwiki spell option.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "vimwiki" },
+  callback = function()
+    vim.opt_local.spell = false -- 문서 파일에서만 켜기
+  end,
+})

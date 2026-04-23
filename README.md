@@ -1,3 +1,19 @@
+# neovim 설정 개발
+- [ ] LazyVim 기능과 플러그인은 어떤 것이 있는가?
+- [ ] vimwiki 관련 설정 수정하기
+  - [ ] 한글 맞춤법 검사 끄기 (nospell)
+  - [ ] 에러 메시지가 뜨는 이유를 찾고 수정하기
+  - [ ] 자동 완성 목록 지우기
+- [ ] vimwiki 대신 쓸 플러그인 찾고 조합하고 설정 완성하기
+  - [ ] obisidian.nvim
+  - [ ] render-markdown.nvim
+  - [ ] avante.nvim
+    - [ ] local gemma4 설정하기
+    - [ ] 글쓰기에 어떤 식으로 활용할 수 있는가?
+    - [ ] 프로그래밍에 어떤 식으로 활용할 수 있는가?
+    - [ ] 바로 다른 인공지능 서비스를 전환하는 방법은?
+- [ ] astronvim과 lazyvim을 비교하고 어떤 것을 쓸 것인지 살펴보기
+
 # 💤 LazyVim 기반 설정
 
 ## lazyvim 기능
