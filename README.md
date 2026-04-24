@@ -1,4 +1,6 @@
 # neovim 설정 개발
+- vimwiki
+- avente.nvim
 
 # 💤 LazyVim 기반 설정
 
