@@ -22,7 +22,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     -- 1. #으로 시작하고 뒤에 문자/숫자가 오는 패턴을 'VimwikiTag' 그룹으로 정의
     -- \v: 매우 유연한(very magic) 정규식 모드
     -- #[a-zA-Z0-9_-]+: # 뒤에 영문, 숫자, _, - 가 오는 단어
-    vim.cmd([[syntax match VimwikiTag /\v#[a-zA-Z0-9_-]+/]])
+    -- vim.cmd([[syntax match VimwikiTag /\v#[a-zA-Z0-9_-]+/]])
+    vim.cmd([[syntax match VimwikiTag /\v#[a-zA-Z0-9_-가-힣ㄱ-ㅎㅏ-ㅣ]+/]])
 
     -- 2. 정의한 그룹에 색상 입히기 (원하는 색으로 변경 가능)
     -- guifg: 글자 색상 (예: #fabd2f는 Gruvbox 노란색)
