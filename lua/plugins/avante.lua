@@ -1,17 +1,22 @@
 return {
   "yetone/avante.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons", -- 여기서 명시적으로 로드 보장
+    "nvim-tree/nvim-web-devicons",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
   },
   event = "VeryLazy",
+  build = "make", -- Windows라면 "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
   opts = {
-    providers = {
+    provider = "ollama", -- 활성 provider 지정
+    providers = { -- 커스텀 provider는 vendors 아래에
       ollama = {
-        endpoint = "http://127.0.0.1:11434",
-        timeout = 30000, -- Timeout in milliseconds
+        -- __inherited_from = "openai", -- OpenAI 호환 API 사용
+        api_key_name = "", -- ollama는 API 키 불필요
+        endpoint = "http://127.0.0.1:11434", -- /v1 필수
+        model = "gemma4:26b", -- ollama에서 실제 pull한 모델명 확인
+        timeout = 30000,
         extra_request_body = {
           options = {
             temperature = 0.75,
@@ -19,7 +24,6 @@ return {
             keep_alive = "5m",
           },
         },
-        model = "gemma4:26b", -- 실행하려는 gemma 4 모델명
       },
     },
   },
