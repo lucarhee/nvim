@@ -1,8 +1,8 @@
 # neovim 설정 개발
 - vimwiki
+  - TODO 노멀모드로 나오면 영문키 변환을 자동으로 만들었는데 인서트 모드에서 줄바꿈을 위해 엔터를 눌러도 영문으로 바뀌는 문제 해결하기
+  - TODO markdown meta 정보를 위한 템플릿 만드기 (obsidian과 연동되게)
 - avente.nvim
-
-# 💤 LazyVim 기반 설정
 
 ## lazyvim 기능
 - 강력한 사용자 환경에서 플러그인을 관리한다. (Manage all your Neovim plugins with a powerful ui)

@@ -33,9 +33,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- 노멀모드로 나오면 무조건 영문키
-vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = "*",
-  callback = function()
-    vim.fn.system("im-select com.apple.keylayout.ABC")
-  end,
-})
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+--   pattern = "*",
+--   callback = function()
+--     vim.system({"im-select", "com.apple.keylayout.ABC"})
+--   end,
+-- })
