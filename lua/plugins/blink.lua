@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 -- plugins/blink.lua
 return {
   "saghen/blink.cmp",

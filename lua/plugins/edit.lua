@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
   {
     "keaising/im-select.nvim",
@@ -7,7 +10,7 @@ return {
       set_previous_events = { "InsertEnter" },
       keep_state_on_normal_mode = true,
     },
-    config = function(_, opts)
+    config = function(_, opts) -- TODO: changing from insert mode to normal mode, it doesn't change english input.
       require("im_select").setup(opts)
 
       vim.api.nvim_create_autocmd("FileType", {

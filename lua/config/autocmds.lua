@@ -1,41 +1,47 @@
--- Autocmds are automatically loaded on the VeryLazy event
--- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
---
--- Add any additional autocmds here
--- with `vim.api.nvim_create_autocmd`
---
--- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
--- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
--- Turn off the vimwiki spell option.
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown", "vimwiki" },
+-- 노트 폴더의 markdown 파일에만 적용
+autocmd({ "BufEnter" }, {
+  group = augroup("mkdnflow_notes", { clear = true }),
+  pattern = vim.fn.expand("~/notes") .. "/*.md",
   callback = function()
-    vim.opt_local.spell = false -- 문서 파일에서만 켜기
+    -- 줄바꿈 설정 (노트 작성에 편함)
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.spell = false
+    -- vim.opt_local.spelllang = "en,cjk" -- 한글 spell 무시
+    -- 상대 줄번호 끄기 (긴 글 작성 시 편함)
+    vim.opt_local.relativenumber = false
   end,
 })
 
--- vimwiki #tag 색상 입히기
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "vimwiki", "markdown" },
+-- 일지 파일 자동으로 템플릿 적용 (신규 파일일 때)
+autocmd({ "BufNewFile" }, {
+  group = augroup("journal_template", { clear = true }),
+  pattern = vim.fn.expand("~/notes/journal") .. "/*.md",
   callback = function()
-    -- 1. #으로 시작하고 뒤에 문자/숫자가 오는 패턴을 'VimwikiTag' 그룹으로 정의
-    -- \v: 매우 유연한(very magic) 정규식 모드
-    -- #[a-zA-Z0-9_-]+: # 뒤에 영문, 숫자, _, - 가 오는 단어
-    -- vim.cmd([[syntax match VimwikiTag /\v#[a-zA-Z0-9_-]+/]])
-    vim.cmd([[syntax match VimwikiTag /\v#[a-zA-Z0-9_-가-힣ㄱ-ㅎㅏ-ㅣ]+/]])
-
-    -- 2. 정의한 그룹에 색상 입히기 (원하는 색으로 변경 가능)
-    -- guifg: 글자 색상 (예: #fabd2f는 Gruvbox 노란색)
-    -- gui=bold: 굵게 표시
-    vim.cmd([[highlight VimwikiTag guifg=#fabd2f gui=bold]])
+    local date = os.date("%Y-%m-%d")
+    local lines = {
+      "---",
+      "date: " .. date,
+      "tags: [journal]",
+      "---",
+      "",
+      "# " .. date .. " 일지",
+      "",
+      "## 오늘의 목표",
+      "- [ ] ",
+      "",
+      "## 작업 로그",
+      "",
+      "## 메모",
+      "",
+      "## 내일 할 일",
+      "- [ ] ",
+    }
+    vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+    -- 커서를 첫 번째 할 일로 이동
+    vim.api.nvim_win_set_cursor(0, { 9, 6 })
   end,
 })
-
--- 노멀모드로 나오면 무조건 영문키
--- vim.api.nvim_create_autocmd("InsertLeave", {
---   pattern = "*",
---   callback = function()
---     vim.system({"im-select", "com.apple.keylayout.ABC"})
---   end,
--- })
